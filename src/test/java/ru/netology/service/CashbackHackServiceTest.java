@@ -1,37 +1,37 @@
 package ru.netology.service;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
 
     @Test
-    void shouldCalculateForAmountBelowBoundary() {
+    public void shouldCalculateForAmountBelowBoundary() {
         CashbackHackService service = new CashbackHackService();
 
         int actual = service.remain(900);
         int expected = 100;
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCalculateForAmountAboveBoundary() {
+    public void shouldCalculateForAmountAboveBoundary() {
         CashbackHackService service = new CashbackHackService();
 
         int actual = service.remain(1100);
         int expected = 900;
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    void shouldReturnZeroIfAmountIsMultipleOfBoundary() {
+    public void shouldReturnZeroIfAmountIsMultipleOfBoundary() {
         CashbackHackService service = new CashbackHackService();
 
         int actual = service.remain(1000);
         int expected = 0;
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 }
